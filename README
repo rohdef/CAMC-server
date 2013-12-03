@@ -1,7 +1,7 @@
+*UPDATED*
 Server broadcasts a packet every second by UDP on port 49155. This is so clients can find the server.
-You should probably use Java's DatagramSocket and DatagramPacket for sending and receiving.
-The server triggers voting when half the duration of the final song of a playlist is done.
-It then broadcasts a notification on port 49156 that the voting period has begun. It can then receive votes on the same port.
-A vote is currently simply a song name, i.e. a String.
+You should probably use Java's DatagramSocket and DatagramPacket for receiving. Use TCP sockets for sending.
+The server triggers voting when half the duration of the final song of a playlist is done, by broadcasting on port 50032.
+It can then receive votes on the same port. See DummyClient.
 
-Note that the server is still fairly untested, I'll get to that on Sunday if possible, but I just wanted to give an idea of the interface.
+I tested the server with some clients on the same machine, I don't have the equipment to test it on a real network.
